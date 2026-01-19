@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: white;
+  border-bottom: 2px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: -180px;
+  margin-left: 150px;
+}
+
+.logo-text h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.logo-text p {
+  font-size: 12px;
+  color: #444;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #0c2d82;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-contact {
+  background-color: #1f3a93;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.btn-facebook {
+  background-color: #1f3a93;
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.hero {
+  background-image: url('maisonf.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 250px 0;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* assombrit légèrement l’image */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.hero {
+  position: relative; /* Nécessaire pour positionner .hero-box à l'intérieur */
+}
+
+.hero-box {
+  position: absolute;   /* Permet de la placer librement */
+  right: 0;             /* Collée au bord droit */
+  bottom: 100px;        /* Ajuste la hauteur depuis le bas — change selon ton goût */
+  background-color: #0d2d78;
+  color: white;
+  padding: 30px 40px;
+  width: 790px;         /* Largeur de la boîte (modifiable) */
+  max-width: 45%;       /* Pour éviter qu’elle dépasse sur petits écrans */
+  z-index: 5;           /* Pour rester au-dessus de l'image */
+  margin: 0;
+}
+
+/* Responsive — pour téléphone/tablette */
+@media (max-width: 768px) {
+  .hero-box {
+    position: static;   /* Repositionne normalement sur mobile */
+    width: 90%;
+    margin: 20px auto 0;
+    transform: none;
+  }
+}
+
+
+
+.hero-box p {
+  font-size: 1.1rem; /* augmente la taille du texte */
+  line-height: 1.6;  /* espace plus agréable entre les lignes */
+}
+
+
+.hero-box .btn-devis {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: white;
+  color: #0d2d78;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* === IMAGE SUPERPOSÉE EN BAS DE LA SECTION HERO === */
+.hero-bottom-image {
+  position: absolute;
+  left: 32%;
+  bottom: -150px; /* Fait dépasser l’image du hero */
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.hero-bottom-image img {
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+     
+
+/* === Version responsive === */
+@media (max-width: 768px) {
+  .hero-bottom-image {
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+}
+
+.entreprise-section {
+  background-color: #fff;
+  padding: 180px 80px 100px; /* ↑ ajouté plus d’espace en haut */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 1;
+  margin-top: 60px; /* petit coup de pouce pour bien descendre */
+}
+
+
+.entreprise-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.entreprise-left,
+.entreprise-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.entreprise-left h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.entreprise-left h2 span {
+  color: #0d2d78; /* bleu comme le reste du site */
+}
+
+.entreprise-left p {
+  font-weight: 600;
+  color: #0d2d78;
+}
+
+.entreprise-right p {
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .entreprise-container {
+    flex-direction: column;
+  }
+  .entreprise-left,
+  .entreprise-right {
+    width: 100%;
+  }
+}
